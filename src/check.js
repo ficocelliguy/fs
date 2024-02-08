@@ -51,8 +51,7 @@ const auditFs = () =>
         false, true
     );
 
-const checkForOutdatedDependencies = (all, recursive) => {
-    const dependencies = getDependencies(all, recursive);
+const checkForOutdatedDependencies = (dependencies) => {
     console.log(`Found ${dependencies.length} target dependencies to age-check.`)
 
     const updates = getDependencyUpdateTimes(dependencies);
@@ -93,8 +92,11 @@ function printProgress(current, max){
 }
 
 const main = (all = false, recursive = false) => {
-    checkForOutdatedDependencies(all, recursive);
-    auditFs();
+    const dependencies = getDependencies(all, recursive);
+    checkForOutdatedDependencies(dependencies);
+    if (dependencies.includes("fs")) {
+        auditFs();
+    }
 }
 
 module.exports = main;

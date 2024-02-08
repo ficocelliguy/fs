@@ -1,0 +1,12 @@
+{
+  "name": "fs",
+  "version": "1.0.0",
+  "description": "Utility to identify out-of-date packages by publish date",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "check": "node ./src/check.js"
+  },
+  "author": "Michael Ficocelli",
+  "license": "MIT"
+}

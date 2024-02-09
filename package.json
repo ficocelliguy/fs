@@ -2,13 +2,13 @@
   "name": "fs",
   "version": "1.0.0",
   "description": "Utility to identify out-of-date packages by publish date",
-  "main": "src/index.js",
+  "main": "index.js",
   "bin": {
-    "fs": "src/bin/cli.js"
+    "fs": "cli.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
-    "check": "node src/bin/cli.js"
+    "check": "node cli.js"
   },
   "author": "Michael Ficocelli",
   "license": "MIT"

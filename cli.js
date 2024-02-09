@@ -1,5 +1,5 @@
 #! /usr/bin/node
-const checkDependencies = require("../check.js");
+const checkDependencies = require("./src/check.js");
 const arg = (a) => process.argv.includes(a)
 
 ;(async () => {

@@ -3,13 +3,21 @@
   "version": "1.0.0",
   "description": "Utility to identify out-of-date packages by publish date",
   "main": "src/index.js",
-  "bin": {
-    "fs": "src/cli.js"
-  },
+  "bin":  "src/cli.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "check": "node src/cli.js"
   },
   "author": "Michael Ficocelli",
-  "license": "MIT"
+  "license": "MIT",
+  "engines": {
+    "node": ">=10"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ficocelliguy/fs.git"
+  }
 }

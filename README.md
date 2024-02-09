@@ -1,6 +1,9 @@
 # Framework Staleness Utility
 Identify stale or abandoned dependencies in your projects, or libraries installed by mistake.
 
+![image](https://github.com/ficocelliguy/fs/assets/1338468/30e2cdfb-8cc9-4a2a-ac43-b6a1a48494e7)
+
+
 ### Usage
 
 Install with `npm i -D https://github.com/ficocelliguy/fs`

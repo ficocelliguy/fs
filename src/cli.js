@@ -1,4 +1,4 @@
-#! /usr/bin/node
+#!/usr/bin/env node
 const { execSync } = require('child_process');
 
 const DAY_IN_MS = 1000 * 60 * 60 * 24

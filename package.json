@@ -1,9 +1,12 @@
 {
-  "name": "fs",
+  "name": "stale-check",
   "version": "1.0.0",
   "description": "Utility to identify out-of-date packages by publish date",
   "main": "src/index.js",
-  "bin":  "src/cli.js",
+  "bin":  {
+    "stale-check": "src/cli.js",
+    "sc": "src/cli.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
     "check": "node src/cli.js"
@@ -18,6 +21,6 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ficocelliguy/fs.git"
+    "url": "git+https://github.com/ficocelliguy/stale-check.git"
   }
 }

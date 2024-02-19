@@ -57,20 +57,6 @@ const formatTimeSince = (msTimeSinceUpdate) => {
 
 const format = (num, label) => num ? `${num}${label}${num > 1 ? "s" : ""} ` : ""
 
-const auditFs = (dependencies) => {
-    console.log("")
-    if (dependencies.includes("fs")) {
-        console.log("The 'fs' package is included in your project's dependencies directly.")
-        console.log("(If you wanted the node 'fs' library, it is already built-in to node.)")
-    } else {
-        console.log("This is how the 'fs' package is included in your project:")
-        run(
-            'npm ls fs',
-            false, true
-        );
-    }
-}
-
 const checkForOutdatedDependencies = (dependencies) => {
     console.log(`Found ${dependencies.length} target dependencies to age-check.`)
 
@@ -131,7 +117,6 @@ const run = (cmd, json = true, stdoutLogging = false) => {
 const main = (all = false, recursive = false) => {
         const dependencies = getDependencies(all, recursive);
         checkForOutdatedDependencies(dependencies);
-        auditFs(dependencies);
     }
 
 const arg = (a) => process.argv.includes(a)

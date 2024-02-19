@@ -1,1 +1,1 @@
-export const fs = {}
+export const staleCheck = {}

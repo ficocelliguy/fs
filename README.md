@@ -6,14 +6,14 @@ Identify stale or abandoned dependencies in your projects, or libraries installe
 
 ### Usage
 
-Install with `npm i -D https://github.com/ficocelliguy/fs`
+Install with `npm i -D https://github.com/ficocelliguy/stale-check`
 
 Check for the most common out-of-maintenance or stale frameworks with
-`npx fs`
+`npx stale-check`
 
 To check all of your projects' immediate dependencies for any that have not been updated in years, use 
-`npx fs -a`
+`npx stale-check -a`
 
-To check dependencies recursively, use `npx fs -r`
+To check dependencies recursively, use `npx stale-check -r`
 
 Note that using both flags `-a -r` may take some time to run.

@@ -1,6 +1,6 @@
 {
   "name": "stale-check",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Utility to identify out-of-date packages by publish date",
   "main": "src/index.js",
   "bin":  {

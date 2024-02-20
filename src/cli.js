@@ -143,7 +143,7 @@ const color = {
 
 ;(async () => {
     const quick = arg("-q") || arg("--quick");
-    const recursive = !quick && (arg("-a") || arg("--all") || arg("-r") || arg("--recursive"));
+    const recursive = arg("-a") || arg("--all") || arg("-r") || arg("--recursive");
 
     main(quick, recursive);
 

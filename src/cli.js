@@ -14,7 +14,7 @@ const getAllChildDependencies = (pkg) => {
     return [...immediateDependencies , ...childDependencies].flat()
 }
 
-const getDependencies = (all, recursive) => {
+const getDependencies = (quick, recursive) => {
     const result = run(`npm ls --json ${recursive ? "--all" : ""}`) || {}
     const commonPackages = cliCollisionPackages.concat(nodeDefaultPackages);
     const immediateDependencies = result.dependencies || {}
@@ -22,7 +22,7 @@ const getDependencies = (all, recursive) => {
 
     return allDependencies.filter(d => {
         const npmInternal = d.match(/(@npm|^npm-)/i);
-        const shouldBeChecked = all ? true : commonPackages.includes(d)
+        const shouldBeChecked = quick ? commonPackages.includes(d) : true
         return !npmInternal && shouldBeChecked
     });
 }
@@ -114,8 +114,8 @@ const run = (cmd, json = true, stdoutLogging = false) => {
     }
 }
 
-const main = (all = false, recursive = false) => {
-        const dependencies = getDependencies(all, recursive);
+const main = (quick = false, recursive = false) => {
+        const dependencies = getDependencies(quick, recursive);
         checkForOutdatedDependencies(dependencies);
     }
 
@@ -142,10 +142,10 @@ const color = {
     }
 
 ;(async () => {
-    const recursive = arg("-r") || arg("--recursive");
-    const all = arg("-a") || arg("--all");
+    const quick = arg("-q") || arg("--quick");
+    const recursive = !quick && (arg("-a") || arg("--all") || arg("-r") || arg("--recursive"));
 
-    main(all, recursive);
+    main(quick, recursive);
 
     process.exit()
 })()
